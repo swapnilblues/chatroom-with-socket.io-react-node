@@ -6,10 +6,14 @@ const io = socketIO(PORT)
 
 io.on("connection", function (socket) {
     console.log("Connection established!")
-    socket.on("message", function (data) {
-        console.log("Message received:", data)
+
+    socket.on("newChatMessage", data => {
+        io.emit("newChatMessage", data)
     })
-    socket.on("disconnect", function () {})
+
+    socket.on("disconnect", function () {
+        console.log("Disconnected")
+    })
 })
 
 console.log(`Server listening on ${PORT}`)
