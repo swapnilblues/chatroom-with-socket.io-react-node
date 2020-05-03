@@ -1,3 +1,7 @@
 /chat-app/node_modules
 /services/node_modules
 /.idea
+/chat-app/yarn-error.log
+/services/yarn-error.log
+/chat-app/.cache
+/chat-app/dist
